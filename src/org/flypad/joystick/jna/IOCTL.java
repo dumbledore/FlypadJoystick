@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package org.flypad.joystick;
+package org.flypad.joystick.jna;
 
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
