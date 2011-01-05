@@ -11,6 +11,7 @@ import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import com.sun.jna.examples.win32.Kernel32;
 import com.sun.jna.examples.win32.W32API.HANDLE;
+import org.flypad.joystick.jna.TempStruct;
 
 /**
  *
@@ -29,6 +30,7 @@ public class Joystick implements JoystickConstants {
      */
     public final byte[] digital = new byte[NUM_DIGITAL];
 
+    private final TempStruct temp = new TempStruct();
 
     private HANDLE handle = null;
     private final JoystickState state = new JoystickState();
@@ -115,7 +117,7 @@ public class Joystick implements JoystickConstants {
                 size,
                 Pointer.NULL,
                 0,
-                state.getPointer(),
+                temp.getPointer(),
                 null
                 );
 
